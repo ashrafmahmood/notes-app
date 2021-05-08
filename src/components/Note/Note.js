@@ -1,5 +1,4 @@
 import axios from '../../axios';
-import moment from 'moment';
 import { MdDeleteForever } from 'react-icons/md';
 import { useStateValue } from '../../StateProvider';
 import './Note.css';
