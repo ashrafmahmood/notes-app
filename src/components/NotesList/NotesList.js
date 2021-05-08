@@ -8,6 +8,7 @@ const NotesList = ({ notes }) => {
 			<AddNote />
 			{notes.map((note) => (
 				<Note
+					key={note.id}
 					id={note.id}
 					title={note.title}
 					text={note.description}
