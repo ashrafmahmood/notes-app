@@ -1,0 +1,45 @@
+.note.new {
+  background: linear-gradient(360deg, #f36d99, #ffb5cd);
+}
+
+.note.new > input {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+  padding: 5px;
+  padding-left: 10px;
+  margin-bottom: 1.5em;
+  outline: none;
+}
+
+textarea {
+  background-color: transparent;
+  border: none;
+  resize: none;
+}
+
+textarea:focus {
+  outline: none;
+}
+
+.note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.save {
+  background-color: #e1e1e1;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid lightgray;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.save:hover {
+  background-color: #ededed;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out;
+  transform: scale(1.05) !important;
+}

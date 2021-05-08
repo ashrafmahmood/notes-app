@@ -1,0 +1,40 @@
+.note {
+  background: linear-gradient(360deg, #3096b8, #66d6fc);
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap;
+  box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.1);
+}
+
+.note > div > span {
+  padding-bottom: 10px;
+}
+
+.note > div > h5 {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.note:hover {
+  transition: transform 0.4s ease-in-out;
+  transform: scale(1.05) !important;
+}
+
+.note-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-icon {
+  cursor: pointer;
+}
+
+.delete-icon:hover {
+  transition: transform 0.2s ease-in-out;
+  transform: scale(1.2) !important;
+}

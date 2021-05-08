@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import { nanoid } from 'nanoid';
+import NotesList from './components/NotesList/NotesList';
+import Search from './components/Search/Search';
+import Header from './components/Header/Header';
+import './App.js'
+import axios from './axios';
+import { useStateValue } from './StateProvider';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+
+	const [ { notes }, dispatch] = useStateValue();
+
+	const [searchText, setSearchText] = useState('');
+
+	useEffect(() => {
+		
+		axios.get('/notes').then( res => {
+			dispatch({
+				type: 'GET_ALL_NOTES',
+				allNote: res.data.data.notes
+			})
+		})
+	}, []);
+
+	return (
+		<div >
+			<div className='container'>
+				<Header />
+				<Search handleSearchNote={setSearchText} />
+				{notes ? (<NotesList
+					notes={notes.filter((note) =>
+						note.title.toLowerCase().includes(searchText)
+					)}
+				/>) : null}
+			</div>
+		</div>
+	);
+};
 
 export default App;
